@@ -1,0 +1,19 @@
+<main class="main">
+    <div class="main___search">
+        <h2>Busca tus noticias por categoria</h2>
+        <input type="text" [(ngModel)]="categoryNote" (ngModelChange)="searchNote($event)">
+    </div>
+    <div *ngIf="!categoryNote.length; else showSearch">
+        <h2>Notas relevantes</h2>
+        <br>
+        <div class="cards">
+            <app-note *ngFor="let note of notes" [idNote]="note.id" [title]="note.title" [category]="note.category" [date]="note.date" [picture]="note.picture"></app-note>
+        </div>
+    </div>
+    <ng-template #showSearch>
+        <div class="cards">
+            <app-note *ngFor="let note of searchNotes" [idNote]="note.id" [title]="note.title" [category]="note.category" [date]="note.date" [picture]="note.picture"></app-note>
+        </div>
+        <p *ngIf="!searchNotes.length">¡No se encontrarón noticias relacionadas con tu búsqueda!</p>
+    </ng-template>
+</main>

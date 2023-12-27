@@ -1,0 +1,27 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    
+    &__subtitle {
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    &__description {
+        font-size: 25px;
+    }
+
+    a {
+        background-color: #999;
+        border: 1px solid #999;
+        border-width: 0px;
+        border-radius: 4px;
+        padding: 16px 16px;
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
